@@ -6,27 +6,27 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var scaffold = new Scaffold(
-      appBar: AppBar(
-        title: Text('yoyoyo'),
-        backgroundColor: Palette.PRIMARY_COLOR_BLUE,
-      ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: buildLinearGradient(),
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Container(
+            width: 140,
+            height: 150,
+            margin: EdgeInsets.only(left: 30, top: 210),
+            color: Palette.PRIMARY_COLOR_LIGHT_PINK,
+            child: Card(
+              semanticContainer: true,
+              color: Palette.PRIMARY_COLOR_BLUE,
+              child: Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text('ArmIT',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                    textAlign: TextAlign.center),
+              ),
+            ),
+          ),
         ),
       ),
     );
-    return MaterialApp(title: 'hello world', home: scaffold);
-  }
-
-  LinearGradient buildLinearGradient() {
-    return LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          Palette.PRIMARY_COLOR_DARK_PINK,
-          Palette.SECONDARY_COLOR_DARK_PINK,
-        ]);
   }
 }
