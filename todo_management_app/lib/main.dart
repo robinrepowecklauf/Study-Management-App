@@ -14,9 +14,15 @@ class MyApp extends StatelessWidget {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       children: <Widget>[
-        ToDoCard(color: Palette.PRIMARY_COLOR_LIGHT_BLUE),
-        ToDoCard(color: Palette.PRIMARY_COLOR_YELLOW),
-        ToDoCard(color: Palette.PRIMARY_COLOR_PURPLE)
+        ToDoCard(
+            fromColor: Palette.PRIMARY_COLOR_LIGHT_BLUE,
+            toColor: Palette.SECONDARY_COLOR_LIGHT_BLUE),
+        ToDoCard(
+            fromColor: Palette.PRIMARY_COLOR_YELLOW,
+            toColor: Palette.SECONDARY_COLOR_YELLOW),
+        ToDoCard(
+            fromColor: Palette.PRIMARY_COLOR_PURPLE,
+            toColor: Palette.SECONDARY_COLOR_PURPLE)
       ],
     )));
   }
