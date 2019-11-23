@@ -15,8 +15,10 @@ class _HomePageState extends State<HomePage> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(130),
           child: AppBar(
-            backgroundColor: Colors.white,
             elevation: 0,
+            // makes time and wifi on iphone become black
+            brightness: Brightness.light,
+            backgroundColor: Colors.white,
             actions: <Widget>[
               IconButton(
                 tooltip: 'Add ToDo',
@@ -33,27 +35,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {},
               )
             ],
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(30),
-              child: Container(
-                height: 80,
-                width: 320,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Hello, Robin!',
-                      style: title,
-                    ),
-                    Text(
-                      "Let's get more organized.",
-                      style: subTitle,
-                    )
-                  ],
-                ),
-              ),
-            ),
+            bottom: getAppBarTexts(),
           ),
         ),
         body: GridView.count(
@@ -85,4 +67,28 @@ class _HomePageState extends State<HomePage> {
           ],
         ));
   }
+}
+
+PreferredSize getAppBarTexts() {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(30),
+    child: Container(
+      height: 80,
+      width: 320,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Hello, Robin!',
+            style: title,
+          ),
+          Text(
+            "Let's get more organized.",
+            style: subTitle,
+          )
+        ],
+      ),
+    ),
+  );
 }

@@ -21,14 +21,14 @@ class ToDoCard extends StatelessWidget {
               child: Container(
                 width: 140,
                 height: 160,
-                decoration: getTodoCardDecoration(),
+                decoration: getToDoCardDecoration(),
                 child: Stack(
                   children: <Widget>[
                     Align(
                         alignment: Alignment(0, -0.8),
                         child: Text(
                           'Chalmers',
-                          style: todoCardTitle,
+                          style: toDoCardTitle,
                         ))
                   ],
                 ),
@@ -40,7 +40,7 @@ class ToDoCard extends StatelessWidget {
     );
   }
 
-  BoxDecoration getTodoCardDecoration() {
+  BoxDecoration getToDoCardDecoration() {
     return BoxDecoration(
         gradient: LinearGradient(
             colors: [this.fromColor, this.toColor],
