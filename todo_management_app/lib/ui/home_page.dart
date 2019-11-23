@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_management_app/components/todo_card.dart';
 import 'package:todo_management_app/resources/values/app_colors.dart';
+import 'package:todo_management_app/resources/values/text_styles.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,22 +13,47 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(150),
+          preferredSize: const Size.fromHeight(130),
           child: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
             actions: <Widget>[
               IconButton(
                 tooltip: 'Add ToDo',
                 icon: const Icon(Icons.add),
                 iconSize: 35,
+                color: Palette.PRIMARY_COLOR_OPTION_BLUE,
                 onPressed: () {},
               ),
               IconButton(
                 tooltip: 'Options',
                 icon: const Icon(Icons.more_vert),
                 iconSize: 35,
+                color: Palette.PRIMARY_COLOR_OPTION_BLUE,
                 onPressed: () {},
               )
             ],
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(30),
+              child: Container(
+                height: 80,
+                width: 320,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Hello, Robin!',
+                      style: title,
+                    ),
+                    Text(
+                      "Let's get more organized.",
+                      style: subTitle,
+                    )
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
         body: GridView.count(
