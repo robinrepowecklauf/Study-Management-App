@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_management_app/resources/values/text_styles.dart';
+import 'package:todo_management_app/resources/values/styles.dart';
 
 class InTrayCard extends StatelessWidget {
   final Color fromColor;
@@ -17,11 +17,12 @@ class InTrayCard extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 20),
+              padding: const EdgeInsets.only(bottom: 20),
               child: Container(
                 width: 140,
                 height: 160,
-                decoration: getInTrayCardDecoration(),
+                decoration:
+                    getInTrayCardDecoration(this.fromColor, this.toColor),
                 child: Stack(
                   children: <Widget>[
                     Align(
@@ -40,19 +41,17 @@ class InTrayCard extends StatelessWidget {
     );
   }
 
-  BoxDecoration getInTrayCardDecoration() {
-    return BoxDecoration(
-        gradient: LinearGradient(
-            colors: [this.fromColor, this.toColor],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            offset: Offset(0, 8),
-            blurRadius: 8,
-          ),
-        ],
-        borderRadius: BorderRadius.circular(20));
-  }
+  BoxDecoration getInTrayCardDecoration(fromColor, toColor) => BoxDecoration(
+      gradient: LinearGradient(
+          colors: [this.fromColor, this.toColor],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black12,
+          offset: Offset(0, 8),
+          blurRadius: 8,
+        ),
+      ],
+      borderRadius: BorderRadius.circular(20));
 }

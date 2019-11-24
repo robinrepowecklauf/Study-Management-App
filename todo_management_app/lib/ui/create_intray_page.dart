@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_management_app/components/base_appbar.dart';
 import '../resources/values/app_colors.dart';
 
 class InTray extends StatefulWidget {
@@ -10,30 +11,57 @@ class _InTrayState extends State<InTray> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-            icon: const Icon(Icons.arrow_downward),
+      appBar: BaseAppBar(
+        titleText: 'Create in tray',
+        subTitleText: "Ease your mind.",
+        icons: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.more_vert),
             iconSize: 35,
             color: Palette.PRIMARY_COLOR_OPTION_BLUE,
-            onPressed: () {
-              Navigator.pop(context);
-            }),
+            onPressed: () {},
+          )
+        ],
+        iconButton: IconButton(
+          icon: Icon(Icons.arrow_downward),
+          iconSize: 35,
+          color: Palette.PRIMARY_COLOR_OPTION_BLUE,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      body: SafeArea(child: Text('yoyo')),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        child: Container(
+          height: 300,
+          decoration: BoxDecoration(
+              color: Palette.PRIMARY_COLOR_LIGHT_GRAY,
+              borderRadius: BorderRadius.circular(20)),
+          child: Stack(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                // TODO change child to textfield and style it
+                child: Container(
+                  color: Colors.red,
+                  height: 20,
+                  width: 500,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
 
-/* IconButton(
-          icon: Icon(Icons.arrow_downward),
-          onPressed: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                    curve: Curves.linearToEaseOut,
-                    type: PageTransitionType.upToDown,
-                    child: HomePage()));
-          },
-        ), */
+/*IconButton(
+        icon: navigateBackIcon,
+        iconSize: 35,
+        color: Palette.PRIMARY_COLOR_OPTION_BLUE,
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ) */

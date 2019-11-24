@@ -24,6 +24,8 @@ class Palette {
   // yellow
   static const Color PRIMARY_COLOR_YELLOW = Color(0xFFFCDD42);
   static const Color SECONDARY_COLOR_YELLOW = Color(0xFFFFCC00);
-  // gray
-  static const Color PRIMARY_COLOR_GRAY = Color(0xFFEEEEF0);
+  // light-gray
+  static const Color PRIMARY_COLOR_LIGHT_GRAY = Color(0xFFEFEFF4);
+  // dark-gray
+  static const Color PRIMARY_COLOR_DARK_GRAY = Color(0xFFE0E0E6);
 }
