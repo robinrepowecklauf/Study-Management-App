@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-TextStyle toDoCardTitle = new TextStyle(
+TextStyle inTrayCardTitle = new TextStyle(
     color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold);
 
 TextStyle subTitle = new TextStyle(

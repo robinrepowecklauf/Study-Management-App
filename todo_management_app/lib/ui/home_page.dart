@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:todo_management_app/components/todo_card.dart';
+import 'package:todo_management_app/components/intray_card.dart';
 import 'package:todo_management_app/resources/values/app_colors.dart';
 import 'package:todo_management_app/resources/values/text_styles.dart';
+import 'create_intray_page.dart';
+import '../components/page_up_animation.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,14 +23,13 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.white,
             actions: <Widget>[
               IconButton(
-                tooltip: 'Add ToDo',
-                icon: const Icon(Icons.add),
-                iconSize: 35,
-                color: Palette.PRIMARY_COLOR_OPTION_BLUE,
-                onPressed: () {},
-              ),
+                  icon: const Icon(Icons.add),
+                  iconSize: 35,
+                  color: Palette.PRIMARY_COLOR_OPTION_BLUE,
+                  onPressed: () {
+                    Navigator.push(context, SlideUpRoute(page: InTray()));
+                  }),
               IconButton(
-                tooltip: 'Options',
                 icon: const Icon(Icons.more_vert),
                 iconSize: 35,
                 color: Palette.PRIMARY_COLOR_OPTION_BLUE,
@@ -43,25 +44,25 @@ class _HomePageState extends State<HomePage> {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: <Widget>[
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_LIGHT_BLUE,
                 toColor: Palette.SECONDARY_COLOR_LIGHT_BLUE),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_YELLOW,
                 toColor: Palette.SECONDARY_COLOR_YELLOW),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_PURPLE,
                 toColor: Palette.SECONDARY_COLOR_PURPLE),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_RED,
                 toColor: Palette.SECONDARY_COLOR_RED),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_LIGHT_PINK,
                 toColor: Palette.SECONDARY_COLOR_LIGHT_PINK),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_BLUE,
                 toColor: Palette.SECONDARY_COLOR_BLUE),
-            ToDoCard(
+            InTrayCard(
                 fromColor: Palette.PRIMARY_COLOR_DARK_PINK,
                 toColor: Palette.SECONDARY_COLOR_DARK_PINK)
           ],

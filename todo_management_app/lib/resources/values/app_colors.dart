@@ -7,7 +7,7 @@ class Palette {
   // light-blue
   static const Color PRIMARY_COLOR_LIGHT_BLUE = Color(0xFF72D3FA);
   static const Color SECONDARY_COLOR_LIGHT_BLUE = Color(0xFF47BBF0);
-  // blue option
+  // blue for the options - icons
   static const Color PRIMARY_COLOR_OPTION_BLUE = Color(0xFF009DFF);
   // dark-pink
   static const Color PRIMARY_COLOR_DARK_PINK = Color(0xFFC270EB);

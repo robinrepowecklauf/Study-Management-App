@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:todo_management_app/resources/values/text_styles.dart';
 
-class ToDoCard extends StatelessWidget {
+class InTrayCard extends StatelessWidget {
   final Color fromColor;
   final Color toColor;
   final String header;
 
-  ToDoCard({this.fromColor, this.toColor, this.header});
+  InTrayCard({this.fromColor, this.toColor, this.header});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +21,14 @@ class ToDoCard extends StatelessWidget {
               child: Container(
                 width: 140,
                 height: 160,
-                decoration: getToDoCardDecoration(),
+                decoration: getInTrayCardDecoration(),
                 child: Stack(
                   children: <Widget>[
                     Align(
                         alignment: Alignment(0, -0.8),
                         child: Text(
                           'Chalmers',
-                          style: toDoCardTitle,
+                          style: inTrayCardTitle,
                         ))
                   ],
                 ),
@@ -40,7 +40,7 @@ class ToDoCard extends StatelessWidget {
     );
   }
 
-  BoxDecoration getToDoCardDecoration() {
+  BoxDecoration getInTrayCardDecoration() {
     return BoxDecoration(
         gradient: LinearGradient(
             colors: [this.fromColor, this.toColor],
