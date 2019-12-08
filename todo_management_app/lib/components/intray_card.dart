@@ -4,9 +4,9 @@ import 'package:todo_management_app/resources/values/styles.dart';
 class InTrayCard extends StatelessWidget {
   final Color fromColor;
   final Color toColor;
-  final String header;
+  final String title;
 
-  InTrayCard({this.fromColor, this.toColor, this.header});
+  InTrayCard({this.fromColor, this.toColor, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,8 @@ class InTrayCard extends StatelessWidget {
                     Align(
                         alignment: Alignment(0, -0.8),
                         child: Text(
-                          'Chalmers',
+                          title,
+                          textAlign: TextAlign.center,
                           style: inTrayCardTitle,
                         ))
                   ],
