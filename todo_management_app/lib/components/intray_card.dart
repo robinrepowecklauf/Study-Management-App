@@ -11,32 +11,18 @@ class InTrayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 110,
+      width: 160,
+      height: 160,
+      decoration: getInTrayCardDecoration(this.fromColor, this.toColor),
       child: Stack(
         children: <Widget>[
           Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Container(
-                width: 140,
-                height: 160,
-                decoration:
-                    getInTrayCardDecoration(this.fromColor, this.toColor),
-                child: Stack(
-                  children: <Widget>[
-                    Align(
-                        alignment: Alignment(0, -0.8),
-                        child: Text(
-                          title,
-                          textAlign: TextAlign.center,
-                          style: inTrayCardTitle,
-                        ))
-                  ],
-                ),
-              ),
-            ),
-          ),
+              alignment: Alignment(0, -0.8),
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: inTrayCardTitle,
+              ))
         ],
       ),
     );
@@ -45,8 +31,8 @@ class InTrayCard extends StatelessWidget {
   BoxDecoration getInTrayCardDecoration(fromColor, toColor) => BoxDecoration(
       gradient: LinearGradient(
           colors: [this.fromColor, this.toColor],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight),
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter),
       boxShadow: [
         BoxShadow(
           color: Colors.black12,

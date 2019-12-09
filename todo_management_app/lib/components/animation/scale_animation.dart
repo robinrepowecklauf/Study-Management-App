@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SlideDownRoute extends PageRouteBuilder {
+class ScaleRoute extends PageRouteBuilder {
   final Widget page;
-  SlideDownRoute({this.page})
+  ScaleRoute({this.page})
       : super(
           pageBuilder: (
             BuildContext context,
@@ -16,11 +16,16 @@ class SlideDownRoute extends PageRouteBuilder {
             Animation<double> secondaryAnimation,
             Widget child,
           ) =>
-              SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(0, -1),
-              end: Offset.zero,
-            ).animate(animation),
+              ScaleTransition(
+            scale: Tween<double>(
+              begin: 0.0,
+              end: 1.0,
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: Curves.fastOutSlowIn,
+              ),
+            ),
             child: child,
           ),
         );

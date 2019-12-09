@@ -33,10 +33,18 @@ class InTrayState extends State<InTray> {
           subTitleText: "Ease your mind.",
           icons: <Widget>[
             IconButton(
-                icon: const Icon(Icons.more_vert),
+                icon: const Icon(Icons.check),
                 iconSize: 35,
                 color: Palette.PRIMARY_COLOR_OPTION_BLUE,
-                onPressed: () {})
+                onPressed: () {
+                  if (titleTextController.text.length > 0) {
+                    Navigator.pop(
+                        context,
+                        Task(
+                            title: titleTextController.text,
+                            about: aboutTextController.text));
+                  }
+                })
           ],
           iconButton: IconButton(
             icon: Icon(Icons.arrow_downward),
@@ -49,12 +57,12 @@ class InTrayState extends State<InTray> {
         ),
         body: GestureDetector(
           onTap: () {
-            FocusScope.of(context).requestFocus(new FocusNode());
+            FocusScope.of(context).requestFocus(FocusNode());
           },
           child: Padding(
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: Container(
-                  height: 300,
+                  height: 500,
                   decoration: BoxDecoration(
                       color: Palette.PRIMARY_COLOR_LIGHT_GRAY,
                       borderRadius: BorderRadius.circular(20)),
@@ -66,40 +74,13 @@ class InTrayState extends State<InTray> {
                         SizedBox(
                           height: 15,
                         ),
+                        Container(height: 70, child: aboutTextField),
                         Expanded(
-                          child: aboutTextField,
+                          child: Container(
+                              margin: EdgeInsets.only(top: 15),
+                              height: 90,
+                              color: Colors.green),
                         ),
-                        Container(
-                            margin: EdgeInsets.only(top: 15),
-                            height: 90,
-                            color: Colors.green),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            IconButton(
-                              icon: const Icon(Icons.remove),
-                              iconSize: 35,
-                              color: Palette.PRIMARY_COLOR_RED,
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.add),
-                              iconSize: 35,
-                              color: Palette.PRIMARY_COLOR_OPTION_BLUE,
-                              onPressed: () {
-                                Navigator.pop(
-                                    context,
-                                    Task(
-                                        title: titleTextController.text,
-                                        about: aboutTextController.text));
-                                /*   _stateProvider
-                                    .notify(ObserverState.UPDATE_LIST); */
-                              },
-                            )
-                          ],
-                        )
                       ]),
                     ),
                   ]))),

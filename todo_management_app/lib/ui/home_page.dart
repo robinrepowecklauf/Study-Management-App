@@ -3,7 +3,7 @@ import 'package:todo_management_app/components/base_appbar.dart';
 import 'package:todo_management_app/components/intray_card.dart';
 import 'package:todo_management_app/components/observer/state_listener.dart';
 import 'package:todo_management_app/components/observer/state_provider.dart';
-import 'package:todo_management_app/components/page_up_animation.dart';
+import 'package:todo_management_app/components/animation/page_up_animation.dart';
 import 'package:todo_management_app/resources/values/app_colors.dart';
 import 'package:todo_management_app/model/task.dart';
 import 'create_intray_page.dart';
@@ -71,6 +71,10 @@ class HomePageState extends State<HomePage> implements StateListener {
 
   Widget buildTaskList() {
     return GridView.builder(
+      padding: EdgeInsets.all(20),
+      itemCount: tasks.length,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, crossAxisSpacing: 20, mainAxisSpacing: 20),
       itemBuilder: (BuildContext context, int index) {
         if (index < tasks.length) {
           return GestureDetector(
@@ -86,9 +90,6 @@ class HomePageState extends State<HomePage> implements StateListener {
           );
         }
       },
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemCount: tasks.length,
     );
   }
 }
