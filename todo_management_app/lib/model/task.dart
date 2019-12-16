@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Task {
-  String title;
-  String about;
-  Color color;
+  String titleText;
+  DateTime deadline;
+  bool isCompleted;
 
-  Task({this.title, this.about});
+  List<Task> unfinishedTasks = [];
+  List<Task> finishedTasks = [];
+
+  Task({this.titleText, this.deadline, this.isCompleted});
 }

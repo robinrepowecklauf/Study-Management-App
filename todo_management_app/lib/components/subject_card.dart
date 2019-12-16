@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:todo_management_app/resources/values/styles.dart';
 
-class InTrayCard extends StatelessWidget {
-  final Color fromColor;
-  final Color toColor;
-  final String title;
+class SubjectCard extends StatelessWidget {
+  final Color gradientFromColor;
+  final Color gradientToColor;
+  final String titleText;
 
-  InTrayCard({this.fromColor, this.toColor, this.title});
+  SubjectCard({this.gradientFromColor, this.gradientToColor, this.titleText});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 160,
       height: 160,
-      decoration: getInTrayCardDecoration(this.fromColor, this.toColor),
+      decoration: _getSubjectCardDecoration(
+          this.gradientFromColor, this.gradientToColor),
       child: Stack(
         children: <Widget>[
           Align(
               alignment: Alignment(0, -0.8),
               child: Text(
-                title,
+                titleText,
                 textAlign: TextAlign.center,
-                style: inTrayCardTitle,
+                style: subjectCardTitleText,
               ))
         ],
       ),
     );
   }
 
-  BoxDecoration getInTrayCardDecoration(fromColor, toColor) => BoxDecoration(
+  BoxDecoration _getSubjectCardDecoration(fromColor, toColor) => BoxDecoration(
       gradient: LinearGradient(
-          colors: [this.fromColor, this.toColor],
+          colors: [this.gradientFromColor, this.gradientToColor],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter),
       boxShadow: [

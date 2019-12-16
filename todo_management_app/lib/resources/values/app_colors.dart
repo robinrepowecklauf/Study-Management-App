@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
 
 class Palette {
-  // blue
-  static const Color PRIMARY_COLOR_BLUE = Color(0xFF439DF8);
-  static const Color SECONDARY_COLOR_BLUE = Color(0xFF007AFF);
-  // light-blue
-  static const Color PRIMARY_COLOR_LIGHT_BLUE = Color(0xFF72D3FA);
-  static const Color SECONDARY_COLOR_LIGHT_BLUE = Color(0xFF47BBF0);
-  // blue for the options - icons
-  static const Color PRIMARY_COLOR_OPTION_BLUE = Color(0xFF009DFF);
-  // dark-pink
-  static const Color PRIMARY_COLOR_DARK_PINK = Color(0xFFC270EB);
-  static const Color SECONDARY_COLOR_DARK_PINK = Color(0xFFAF52DE);
-  // light-pink
-  static const Color PRIMARY_COLOR_LIGHT_PINK = Color(0xFFF4CCE3);
-  static const Color SECONDARY_COLOR_LIGHT_PINK = Color(0xFFF0B1CB);
-  // red
-  static const Color PRIMARY_COLOR_RED = Color(0xFFFF453A);
-  static const Color SECONDARY_COLOR_RED = Color(0xFFFF3C31);
-  // purple
-  static const Color PRIMARY_COLOR_PURPLE = Color(0xFF7877ED);
-  static const Color SECONDARY_COLOR_PURPLE = Color(0xFF5856D6);
-  // yellow
-  static const Color PRIMARY_COLOR_YELLOW = Color(0xFFFCDD42);
-  static const Color SECONDARY_COLOR_YELLOW = Color(0xFFFFCC00);
-  // light-gray
-  static const Color PRIMARY_COLOR_LIGHT_GRAY = Color(0xFFEFEFF4);
-  // dark-gray
-  static const Color PRIMARY_COLOR_DARK_GRAY = Color(0xFFE0E0E6);
+  List<Color> colors;
+
+  static const Color LIGHT_BLUE_COLOR = Color(0xFF009DFF);
+  static const Color BLUE_COLOR = Color(0xFF036DC3);
+  static const Color DARK_TURQOUISE_COLOR = Color(0xFF60a3bc);
+  static const Color RED_COLOR = Color(0xFFe94f64);
+  static const Color PURPLE_COLOR = Color(0xFFa29bfe);
+  static const Color GREEN_COLOR = Color(0xFF6aae6a);
+  static const Color ORANGE_COLOR = Color(0xFFe57254);
+  static const Color PINK_COLOR = Color(0xFFd56f90);
+  static const Color GRAY_COLOR = Color(0xFF636e72);
+  // dark mode
+  static const Color DARK_MODE_DARK_GRAY_COLOR =
+      Color.fromRGBO(36, 36, 37, 100);
+
+  static const Color DARK_MODE_LIGHT_GRAY_COLOR =
+      Color.fromRGBO(55, 55, 59, 100);
+
+  Palette() {
+    colors = [
+      BLUE_COLOR,
+      RED_COLOR,
+      GREEN_COLOR,
+      PURPLE_COLOR,
+      ORANGE_COLOR,
+      DARK_TURQOUISE_COLOR,
+      PINK_COLOR,
+      GRAY_COLOR
+    ];
+  }
 }

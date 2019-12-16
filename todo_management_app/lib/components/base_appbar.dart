@@ -4,24 +4,30 @@ import 'package:todo_management_app/resources/values/styles.dart';
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String titleText;
   final String subTitleText;
-  final List<Widget> icons;
-  final Widget iconButton;
+  final List<Widget> rightIconButtons;
+  final Widget leftIconButton;
+  final Color color;
 
-  const BaseAppBar(
-      {Key key, this.iconButton, this.titleText, this.subTitleText, this.icons})
+  BaseAppBar(
+      {Key key,
+      this.leftIconButton,
+      this.titleText,
+      this.subTitleText,
+      this.color,
+      this.rightIconButtons})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
         elevation: 0,
-        brightness: Brightness.light,
-        backgroundColor: Colors.white,
+        //brightness: Brightness.light,
+        backgroundColor: Color.fromRGBO(33, 33, 33, 0),
         // TODO make this set in this class
-        actions: icons,
-        bottom: bottom,
+        actions: rightIconButtons,
+        bottom: bottom(this.color),
         // TODO make this set in this class
-        leading: iconButton);
+        leading: leftIconButton);
   }
 
   @override
@@ -45,7 +51,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
         },
       ); */
 
-  PreferredSize get bottom => new PreferredSize(
+  PreferredSize bottom(Color color) => PreferredSize(
         preferredSize: Size.fromHeight(30),
         child: Container(
           height: 80,
@@ -54,8 +60,21 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(titleText, style: title),
-              Text(subTitleText, style: subTitle)
+              Row(
+                children: <Widget>[
+                  Text(this.titleText, style: appBarTitleText),
+                  SizedBox(width: 15),
+                  Container(
+                    width: 30,
+                    height: 30,
+                    decoration: new BoxDecoration(
+                      color: color,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ],
+              ),
+              Text(this.subTitleText, style: appBarSubTitleText)
             ],
           ),
         ),
