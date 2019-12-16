@@ -6,7 +6,7 @@ class Subject {
   String aboutText;
   Color color;
 
-  Task task;
+  List<Task> tasks = [];
 
   Subject({this.titleText, this.aboutText, this.color});
 }

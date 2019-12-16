@@ -62,16 +62,8 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(this.titleText, style: appBarTitleText),
+                  Text(this.titleText, style: appBarTitleText(color)),
                   SizedBox(width: 15),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: new BoxDecoration(
-                      color: color,
-                      shape: BoxShape.circle,
-                    ),
-                  ),
                 ],
               ),
               Text(this.subTitleText, style: appBarSubTitleText)

@@ -7,7 +7,7 @@ import 'package:todo_management_app/components/animation/page_up_animation.dart'
 import 'package:todo_management_app/components/animation/scale_animation.dart';
 import 'package:todo_management_app/resources/values/app_colors.dart';
 import 'package:todo_management_app/model/subject.dart';
-import 'package:todo_management_app/ui/task_page.dart';
+import 'package:todo_management_app/ui/subject_page.dart';
 import 'create_subject_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,14 +47,14 @@ class HomePageState extends State<HomePage> implements StateListener {
           IconButton(
               icon: const Icon(Icons.add_circle),
               iconSize: 35,
-              color: Palette.LIGHT_BLUE_COLOR,
+              color: Colors.white,
               onPressed: () {
                 _navigateAndGetTask(context);
               }),
           IconButton(
             icon: const Icon(Icons.more_vert),
             iconSize: 35,
-            color: Palette.LIGHT_BLUE_COLOR,
+            color: Colors.white,
             onPressed: () {},
           )
         ],
@@ -66,7 +66,7 @@ class HomePageState extends State<HomePage> implements StateListener {
   _navigateAndGetTask(BuildContext context) async {
     createdSubject = await Navigator.push(
       context,
-      SlideUpRoute(page: SubjectPage()),
+      SlideUpRoute(page: CreateSubjectPage()),
     );
 
     if (createdSubject != null)
@@ -86,7 +86,7 @@ class HomePageState extends State<HomePage> implements StateListener {
               Navigator.push(
                 context,
                 ScaleRoute(
-                  page: TaskPage(subject: subjects.elementAt(index)),
+                  page: SubjectPage(subject: subjects.elementAt(index)),
                 ),
               );
             },

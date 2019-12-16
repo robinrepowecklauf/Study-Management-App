@@ -12,7 +12,7 @@ class Palette {
   static const Color ORANGE_COLOR = Color(0xFFe57254);
   static const Color PINK_COLOR = Color(0xFFd56f90);
   static const Color GRAY_COLOR = Color(0xFF636e72);
-  // dark mode
+
   static const Color DARK_MODE_DARK_GRAY_COLOR =
       Color.fromRGBO(36, 36, 37, 100);
 

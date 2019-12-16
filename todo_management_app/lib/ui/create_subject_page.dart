@@ -1,42 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:todo_management_app/components/base_appbar.dart';
-import 'package:todo_management_app/components/observer/state_listener.dart';
-import 'package:todo_management_app/components/observer/state_provider.dart';
-import 'package:todo_management_app/model/subject.dart';
-import 'package:todo_management_app/resources/values/styles.dart';
-import '../resources/values/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:custom_radio/custom_radio.dart';
+import 'package:todo_management_app/components/base_appbar.dart';
+import 'package:todo_management_app/resources/values/styles.dart';
+import 'package:todo_management_app/resources/values/app_colors.dart';
+import 'package:todo_management_app/model/subject.dart';
 
-class SubjectPage extends StatefulWidget {
-  SubjectPage({Key key, this.title}) : super(key: key);
+class CreateSubjectPage extends StatefulWidget {
+  CreateSubjectPage({Key key, this.title}) : super(key: key);
 
   final String title;
   String radioValue = '';
 
   @override
-  SubjectPageState createState() => SubjectPageState();
+  CreateSubjectPageState createState() => CreateSubjectPageState();
 }
 
-class SubjectPageState extends State<SubjectPage> implements StateListener {
-  RadioBuilder<String, double> simpleBuilder;
-  var stateProvider;
-
+class CreateSubjectPageState extends State<CreateSubjectPage> {
   Palette palette;
   Color pickedColor;
-
-  final titleTextController = TextEditingController();
-  final aboutTextController = TextEditingController();
-
-  @override
-  void onStateChanged(ObserverState state) {}
+  var titleTextController, aboutTextController;
 
   @override
   void initState() {
     super.initState();
-    stateProvider = new StateProvider();
-    stateProvider.subscribe(this);
     palette = Palette();
+    titleTextController = TextEditingController();
+    aboutTextController = TextEditingController();
   }
 
   @override
@@ -59,7 +49,7 @@ class SubjectPageState extends State<SubjectPage> implements StateListener {
             IconButton(
                 icon: const Icon(Icons.check_circle),
                 iconSize: 35,
-                color: Palette.LIGHT_BLUE_COLOR,
+                color: Colors.white,
                 onPressed: () {
                   if (titleTextController.text.length > 0 &&
                       this.pickedColor != null) {
@@ -76,7 +66,7 @@ class SubjectPageState extends State<SubjectPage> implements StateListener {
           leftIconButton: IconButton(
             icon: Icon(Icons.expand_more),
             iconSize: 35,
-            color: Palette.LIGHT_BLUE_COLOR,
+            color: Colors.white,
             onPressed: () {
               Navigator.pop(context);
             },
