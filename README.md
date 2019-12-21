@@ -16,10 +16,10 @@ If you are on a iPhone simulator, write `flutter clean` before `flutter run`.
 
 ## Screenshots
 <p float="center">
-  <img src="screenshots/home_page_subjects.png" width="275" hspace="5"/>
-  <img src="screenshots/create_task.png" width="275" hspace="15"/>
-  <img src="screenshots/dog_walker_no_tasks.png" width="275" hspace="5"/>
-  <img src="screenshots/subject_uncompleted.png" width="275" hspace="5"/>
-  <img src="screenshots/subject_completed.png" width="275" hspace="15"/>
-  <img src="screenshots/dog_walker_subject.png" width="275" hspace="5"/>
+  <img src="screenshots/home_page_subjects.png" width="275"/>
+  <img src="screenshots/create_task.png" width="275"/>
+  <img src="screenshots/dog_walker_no_tasks.png" width="275"/>
+  <img src="screenshots/subject_uncompleted.png" width="275"/>
+  <img src="screenshots/subject_completed.png" width="275"/>
+  <img src="screenshots/dog_walker_subject.png" width="275"/>
 </p>
