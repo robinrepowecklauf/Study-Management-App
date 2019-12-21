@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_management_app/model/task.dart';
 
 class Subject {
-  String titleText;
-  String aboutText;
+  String titleText, aboutText;
   Color color;
 
   List<Task> tasks = [];

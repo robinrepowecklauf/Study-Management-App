@@ -2,9 +2,7 @@ class Task {
   String titleText;
   DateTime deadline;
   bool isCompleted;
+  int id;
 
-  List<Task> unfinishedTasks = [];
-  List<Task> finishedTasks = [];
-
-  Task({this.titleText, this.deadline, this.isCompleted});
+  Task({this.titleText, this.deadline, this.isCompleted, this.id});
 }

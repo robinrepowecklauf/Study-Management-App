@@ -5,7 +5,6 @@ import 'package:todo_management_app/components/observer/state_listener.dart';
 import 'package:todo_management_app/components/observer/state_provider.dart';
 import 'package:todo_management_app/components/animation/page_up_animation.dart';
 import 'package:todo_management_app/components/animation/scale_animation.dart';
-import 'package:todo_management_app/resources/values/app_colors.dart';
 import 'package:todo_management_app/model/subject.dart';
 import 'package:todo_management_app/ui/subject_page.dart';
 import 'create_subject_page.dart';

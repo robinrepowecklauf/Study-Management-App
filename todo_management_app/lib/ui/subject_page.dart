@@ -10,7 +10,6 @@ import 'package:todo_management_app/resources/values/styles.dart';
 
 class SubjectPage extends StatefulWidget {
   final Subject subject;
-  String radioValue = 'First';
 
   SubjectPage({Key key, @required this.subject}) : super(key: key);
 
@@ -57,7 +56,8 @@ class _SubjectPageState extends State<SubjectPage>
                   color: widget.subject.color,
                   onPressed: () {
                     setState(() {
-                      widget.subject.tasks.add(Task());
+                      widget.subject.tasks
+                          .add(Task(id: widget.subject.tasks.length));
                     });
                   }),
               IconButton(
@@ -72,15 +72,15 @@ class _SubjectPageState extends State<SubjectPage>
           ),
           body: GestureDetector(
             onPanUpdate: (details) {
-              if (details.delta.dx > 0) {
+              /*     if (details.delta.dx > 0) {
                 setState(() {
                   currentIndex = 0;
                 });
               } else {
                 setState(() {
                   currentIndex = 1;
-                });
-              }
+                }); 
+              }*/
             },
             child: Container(
                 height: double.infinity,
@@ -100,13 +100,21 @@ class _SubjectPageState extends State<SubjectPage>
                   Padding(
                       padding: EdgeInsets.only(
                           top: ScreenUtil.getInstance().setHeight(220)),
-                      child: _buildListView()),
+                      child: _build()),
                 ])),
           )),
     );
   }
 
-  Widget _buildListView() => ListView.separated(
+  Widget _build() => //ReorderableListView(
+      //onReorder: (int oldIndex, int newIndex) {
+      //setState(() {
+      // _updateMyItems(oldIndex, newIndex);
+      //});
+      //},
+      //scrollDirection: Axis.vertical,
+      //children: [
+      ListView.separated(
         padding: EdgeInsets.all(8.0),
         separatorBuilder: (context, index) => Divider(
           color: Palette.DARK_MODE_LIGHT_GRAY_COLOR,
@@ -120,7 +128,7 @@ class _SubjectPageState extends State<SubjectPage>
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             value: index,
             groupValue: value,
-            subLabel: '25 Maj 2019',
+            subLabel: widget.subject.tasks.length.toString() + ' May 2019',
             color: widget.subject.color,
             onChanged: (int newValue) {
               setState(() {
@@ -129,7 +137,18 @@ class _SubjectPageState extends State<SubjectPage>
             },
           ),
         ),
+        //)
+        //]
       );
+
+  void _updateMyItems(int oldIndex, int newIndex) {
+    if (newIndex > oldIndex) {
+      newIndex -= 1;
+    }
+
+    final Task item = widget.subject.tasks.removeAt(oldIndex);
+    widget.subject.tasks.insert(newIndex, item);
+  }
 
   List<Widget> _buildTypeOfTaskSelector() {
     return titles.map((selected) {

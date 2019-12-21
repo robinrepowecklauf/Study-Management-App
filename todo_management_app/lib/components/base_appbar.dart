@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_management_app/resources/values/styles.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String titleText;
-  final String subTitleText;
+  final String titleText, subTitleText;
   final List<Widget> rightIconButtons;
   final Widget leftIconButton;
   final Color color;

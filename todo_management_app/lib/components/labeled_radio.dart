@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LabeledRadio extends StatelessWidget {
-  final String label;
-  final String subLabel;
+  final String label, subLabel;
   final EdgeInsets padding;
-  final int groupValue;
-  final int value;
+  final int groupValue, value;
   final Function onChanged;
   final Color color;
   final bool isSelected;
+  final Key key;
 
   const LabeledRadio(
       {this.label,
@@ -19,7 +18,8 @@ class LabeledRadio extends StatelessWidget {
       this.value,
       this.onChanged,
       this.color,
-      this.isSelected});
+      this.isSelected,
+      this.key});
 
   @override
   Widget build(BuildContext context) {

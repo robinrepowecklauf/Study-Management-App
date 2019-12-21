@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_management_app/resources/values/styles.dart';
 
 class SubjectCard extends StatelessWidget {
-  final Color gradientFromColor;
-  final Color gradientToColor;
+  final Color gradientFromColor, gradientToColor;
   final String titleText;
 
   SubjectCard({this.gradientFromColor, this.gradientToColor, this.titleText});
@@ -23,7 +22,7 @@ class SubjectCard extends StatelessWidget {
                 titleText,
                 textAlign: TextAlign.center,
                 style: subjectCardTitleText,
-              ))
+              )),
         ],
       ),
     );
