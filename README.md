@@ -1,4 +1,4 @@
-# E Hana: ToDo & Management App
+# E Hana: A ToDo, Organize & Management App
 The purpose with this app was to simplify the organization of different tasks I had in different subjects. 
 This was done using [Flutter](https://flutter.dev).
 
