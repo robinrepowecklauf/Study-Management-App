@@ -12,7 +12,7 @@ This was done using [Flutter](https://flutter.dev).
 4. Navigate into `todo_management_app` and type `flutter run`.
 
 ## Error
-If you are on a iPhone simulator, write `flutter clean` before you type `flutter run`.
+If you are on a iPhone simulator, write `flutter clean` before `flutter run`.
 
 ## Screenshots
 <p float="center">
