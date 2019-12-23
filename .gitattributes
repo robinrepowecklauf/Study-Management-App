@@ -1,1 +1,3 @@
-*.dart linguist-language=DART
+*.dart linguist-language=Dart
+*.h linguist-language=Dart
+*.xml linguist-language=Dart
